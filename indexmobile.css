@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  text-align: center;
+  background-color: #ffffff;
+  font-family: "Pontano Sans", sans-serif;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
+  height: 100%;
+}
+
+#container {
+  height: inherit;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 5rem 1fr 1fr 5rem;
+  grid-template-areas:
+    "h h h h"
+    "c c c c"
+    "c c c c"
+    "f f f f";
+  grid-gap: 2rem;
+}
+
+#header {
+  grid-area: h;
+}
+
+#toggleButtons {
+  margin: auto;
+  align-items: center;
+  margin-left: 0%;
+  grid-area: c;
+}
+
+#fancyStartButton {
+  grid-area: f;
+}
+
+button {
+  border: 0.5rem solid rgb(113, 115, 130);
+  color: rgb(75, 71, 71);
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 28.4rem;
+  height: 10rem;
+  display: inline-block;
+  flex-wrap: nowrap;
+  font-size: 4rem;
+  cursor: pointer;
+  margin: 0.5%;
+  border-color: #DBAF6A;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  background-color: #9a9a9a;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+  opacity: 1;
+  font-weight: 600;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+p {
+  letter-spacing: 0.2rem;
+  display: inline;
+  font-size: 2.5rem;
+}
+
+#feilmelding {
+  color:red;
+  font-size:5rem;
+}
+
+#onePlayer {
+  background-color: #ff0900;
+}
+
+#onePlayer:hover, #twoPlayer:hover, #threePlayer:hover, #fourPlayer:hover {
+  transition-duration: 0.2s;
+  background-color:
+  border-color: #eac080;
+  color: white;
+  font-weight: 500;
+  outline: none;
+}
+
+#onePlayer:active, #twoPlayer:active, #threePlayer:active, #fourPlayer:active {
+  transform: scale(1.03);
+  cursor: default;
+  transition-duration: 0.5s;
+  border-color: #ffc061;
+  outline: none;
+}
+
+#onePlayer:focus, #twoPlayer:focus, #threePlayer:focus, #fourPlayer:focus {
+  transform: scale(1.08);
+  border: 4px solid #ffc061;
+  color: #FFE161;
+outline: none;
+}
+
+#twoPlayer {
+  background-color: #c21807;
+}
+
+#threePlayer {
+  background-color: #960018;
+}
+
+#fourPlayer {
+  background-color: #7c0a02;
+}
+
+#play {
+  display: inline-block;
+  font-size: 5rem;
+  cursor: pointer;
+  border: 0.5rem solid;
+  border-color: #DBAD6A;
+  background-color: #3d3d3d;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+  opacity: 1;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  color: white;
+  border-radius: 3%;
+  text-align: center;
+  width: 94%;
+  height: 10rem;
+  margin-top:0%;
+  outline: none;
+  margin-bottom: -5%;
+}
+
+#play:hover {
+  transform: scale(1.02);
+  transition-duration: 0.2s;
+  background-color: #6e6e6e;
+  border-color: #eac080;
+  color: white;
+  font-weight: 700;
+  outline: none;
+}
+
+#play:active {
+  transform: scale(1.07);
+  cursor: default;
+  transition-duration: 0.5s;
+  border-color: #ffc061;
+  color: #FFE161;
+  outline: none;
+}
+
+input {
+  height: 6rem;
+  width: 27rem;
+  display: inline-block;
+  flex-wrap: wrap;
+  font-family: "Pontano Sans", sans-serif;
+  margin-top: 5rem;
+  margin: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 2%;
+  font-size: 3rem;
+}
+
+#playerNames {
+  margin: 0 auto;
+}
+.singleplayer, .multiplayer {
+  visibility: hidden;
+}
+
+#logo {
+  cursor: pointer;
+  width: 50rem;
+  margin-bottom: -10%;
+}
+
+#dice {
+  width: 22rem;
+  height: auto;
+  cursor: pointer;
+  margin-bottom: -10%;
+  margin-top: -22%;
+}

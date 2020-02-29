@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Yatzy!</title>
+    <link rel="icon" href="img/favicon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" media='(min-width: 1025px)' type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" media='(max-width: 1024px)' href="indexmobile.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Open+Sans+Condensed:300|Pontano+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif|Bungee+Shade|Comfortaa|Exo|Rajdhani|Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Playfair+Display+SC&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="bildeLogo">
+          <img src="img/logo.png" alt="Logo" id="logo" /><br />
+    <img src="img/dice.png" alt="Dices" id="dice"></h1>
+  </div>
+    <div id="container">
+      <div id="toggleButtons">
+        <button id="onePlayer" onclick="oneGo()">1-spiller</button>
+        <button id="twoPlayer" onclick="twoGo()">2-spiller</button>
+        <button id="threePlayer" onclick="threeGo()">3-spiller</button>
+        <button id="fourPlayer" onclick="fourGo()">4-spiller</button><br /><br />
+
+        <div id="playerNames">
+          <input
+            type="text"
+            id="playerOne"
+            class="singleplayer"
+            placeholder="Spiller 1"
+            maxlength="10"
+            autofocus
+          />
+          <input
+            type="text"
+            id="playerTwo"
+            class="multiplayer"
+            placeholder="Spiller 2"
+            maxlength="10"
+          />
+          <input
+            type="text"
+            id="playerThree"
+            class="multiplayer"
+            placeholder="Spiller 3"
+            maxlength="10"
+          />
+          <input
+            type="text"
+            id="playerFour"
+            class="multiplayer"
+            placeholder="Spiller 4"
+            maxlength="10"
+          /> <br>
+          </div><br>
+
+          <div id="feilmelding"></div>
+          <button id="play" onclick="play()">Start spillet!</button> <br>
+      </div>
+    </div>
+
+    <script src="hjemmeside.js"></script>
+    <script src="yatzy.js"></script>
+    <script src="menyer.js"></script>
+  </body>
+</html>

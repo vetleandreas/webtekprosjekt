@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Yatzy</title>
+    <link rel="icon" href="img/favicon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" id="stylesheet" media='(min-width: 1025px)' type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" media='(max-width: 1024px)' href="stylesheetmobile.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Open+Sans+Condensed:300|Pontano+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif|Bungee+Shade|Comfortaa|Exo|Rajdhani|Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Playfair+Display+SC&display=swap" rel="stylesheet">
+  </head>
+  <body onload="loadingSpill()">
+    <script>
+      function loadingSpill(){
+        settSpillernavn();
+        tildelBilde();
+        antallAvatarer();
+      }
+    </script>
+    <div id="container">
+
+      <div id="first">
+        <h1>
+        <img src="img/logo.png" alt="Logo" id="logo"><br></h1>
+        <button onclick="dropmenu()" class="knappVenstreSide" id="menubutton">Meny</button>
+        <div id="toggleButtons">
+        <button onclick="regler()" class="knappVenstreSide" id="reglerButton">Regler</button>
+        <p id="regler">
+          Få høyest mulig poengsum på Yatzy! Trykk på terningene for å beholde dem,
+          slik at de ikke ruller. Du får tre kast per kategori.
+          Trenger du en liten oppfriskning på reglene? <br> <br>
+          - Liten straight er 1-5 <br>
+          - Stor straight er 2-6 <br>
+          - Fullt hus er 3 like + 2 like <br>
+          - På sjanse skal du få høyest mulig tall på alle terningene <br>
+          - På Yatzy skal du få 5 like <br> <br>
+          Lykke til!
+          </p>
+        <button type="button" id="resetKnapp" class="knappVenstreSide" onclick="resetSpill()">Start på nytt</button>
+        <button type="button" id="nyeSpillereKnapp" class="knappVenstreSide" onclick="window.location.href = 'index.html';">Nye spillere</button>
+        </div><br>
+        <br><br><br>
+
+
+          <div id="checkboxer">
+            <input type="checkbox" id=0>
+            <input type="checkbox" id=1>
+            <input type="checkbox" id=2>
+            <input type="checkbox" id=3>
+            <input type="checkbox" id=4>
+
+
+        </div>
+      </div>
+      <div id="popUpContainer">
+
+      <div id="hsPopUp">
+        <ol id="hs">
+        </ol>
+        <button type="button" name="button" onclick="visHighscore()" class="gaTilbake">Gå tilbake</button>
+      </div>
+    </div>
+
+    <div id="finalScore">
+      <div id="finalScorePopUp">
+        <ol id="finalScoreListe">
+          <li id="plass1"></li>
+          <li id="plass2"></li>
+          <li id="plass3"></li>
+          <li id="plass4"></li>
+        </ol>
+          <button type="button" class="litenKnapp" id="nyeSpillere" onclick="finalScore(this.id)">Nye spillere</button>
+          <button type="button" class="litenKnapp" id="spillPaNytt" onclick="finalScore(this.id)">Spill på nytt</button>
+      </div>
+    </div>
+
+      <div id="third">
+        <h3>Poengsum</h3>
+        <table>
+          <tr>
+            <th> Spillernr.
+            </th>
+            <th> 1</th>
+            <th> 2</th>
+            <th> 3</th>
+            <th> 4</th>
+            <th id="spiller1" class="tabellspillernavn"></th>
+            <th id="spiller2" class="tabellspillernavn"></th>
+            <th id="spiller3" class="tabellspillernavn"></th>
+            <th id="spiller4" class="tabellspillernavn"></th>
+          </tr>
+          <tr id="enere">
+            <td>Enere</td>
+            <td id="1-1"></td>
+            <td id="2-1"></td>
+            <td id="3-1"></td>
+            <td id="4-1"></td>
+          </tr>
+          <tr id="toere">
+            <td>Toere</td>
+            <td id="1-2"></td>
+            <td id="2-2"></td>
+            <td id="3-2"></td>
+            <td id="4-2"></td>
+          </tr>
+          <tr id="treere">
+            <td>Treere</td>
+            <td id="1-3"></td>
+            <td id="2-3"></td>
+            <td id="3-3"></td>
+            <td id="4-3"></td>
+          </tr>
+          <tr id="firere">
+            <td>Firere</td>
+            <td id="1-4"></td>
+            <td id="2-4"></td>
+            <td id="3-4"></td>
+            <td id="4-4"></td>
+          </tr>
+          <tr id="femmere">
+            <td>Femmere</td>
+            <td id="1-5"></td>
+            <td id="2-5"></td>
+            <td id="3-5"></td>
+            <td id="4-5"></td>
+          </tr>
+          <tr id="seksere">
+            <td>Seksere</td>
+            <td id="1-6"></td>
+            <td id="2-6"></td>
+            <td id="3-6"></td>
+            <td id="4-6"></td>
+          </tr>
+          <tr id="sum">
+            <td><b>Sum</b></td>
+            <td id="1-faseEn"></td>
+            <td id="2-faseEn"></td>
+            <td id="3-faseEn"></td>
+            <td id="4-faseEn"></td>
+          </tr>
+          <tr id="bonus">
+            <td><b>Bonus</b></td>
+            <td id="1-bonus"></td>
+            <td id="2-bonus"></td>
+            <td id="3-bonus"></td>
+            <td id="4-bonus"></td>
+          </tr>
+          <tr id="1par">
+            <td>1 par</td>
+            <td id="1-7"></td>
+            <td id="2-7"></td>
+            <td id="3-7"></td>
+            <td id="4-7"></td>
+          </tr>
+          <tr id="2par">
+            <td>2 par</td>
+            <td id="1-8"></td>
+            <td id="2-8"></td>
+            <td id="3-8"></td>
+            <td id="4-8"></td>
+          </tr>
+          <tr id="3like">
+            <td>3 like</td>
+            <td id="1-9"></td>
+            <td id="2-9"></td>
+            <td id="3-9"></td>
+            <td id="4-9"></td>
+          </tr>
+          <tr id="4like">
+            <td>4 like</td>
+            <td id="1-10"></td>
+            <td id="2-10"></td>
+            <td id="3-10"></td>
+            <td id="4-10"></td>
+          </tr>
+          <tr id="litenStraight">
+            <td>Liten straight</td>
+            <td id="1-11"></td>
+            <td id="2-11"></td>
+            <td id="3-11"></td>
+            <td id="4-11"></td>
+          </tr>
+          <tr id="storStraight">
+            <td>Stor straight</td>
+            <td id="1-12"></td>
+            <td id="2-12"></td>
+            <td id="3-12"></td>
+            <td id="4-12"></td>
+          </tr>
+          <tr id="hus">
+            <td>Hus</td>
+            <td id="1-13"></td>
+            <td id="2-13"></td>
+            <td id="3-13"></td>
+            <td id="4-13"></td>
+          </tr>
+          <tr id="sjanse">
+            <td>Sjanse</td>
+            <td id="1-14"></td>
+            <td id="2-14"></td>
+            <td id="3-14"></td>
+            <td id="4-14"></td>
+          </tr>
+          <tr id="yatzy">
+            <td>Yatzy</td>
+            <td id="1-15"></td>
+            <td id="2-15"></td>
+            <td id="3-15"></td>
+            <td id="4-15"></td>
+          </tr>
+          <tr id="totalsum">
+            <td>Totalsum</td>
+            <td id="1-totalsum"></td>
+            <td id="2-totalsum"></td>
+            <td id="3-totalsum"></td>
+            <td id="4-totalsum"></td>
+          </tr>
+        </table>
+        </div>
+        <div id="second">
+          <div id="header">
+            <div><img id="imgAvatar1" class="avatar"><p class="spiller" id="avatar1"></p></div>
+            <div><img id="imgAvatar2" class="avatar"><p class="spiller" id="avatar2"></p></div>
+            <div><img id="imgAvatar3" class="avatar"><p class="spiller" id="avatar3"></p></div>
+            <div><img id="imgAvatar4" class="avatar"><p class="spiller" id="avatar4"></p></div>
+          </div>
+          <div id="brett">
+            <div id="rundeForteller"></div>
+            <label for="0" onclick="moveDice0()"><img height="40px" id="dicePos0" class="dices" draggable="false"></label>
+            <label for="1" onclick="moveDice1()"><img height="40px" id="dicePos1" class="dices" draggable="false"></label>
+            <label for="2" onclick="moveDice2()"><img height="40px" id="dicePos2" class="dices" draggable="false"></label>
+            <label for="3" onclick="moveDice3()"><img height="40px" id="dicePos3" class="dices" draggable="false"></label>
+            <label for="4" onclick="moveDice4()"><img height="40px" id="dicePos4" class="dices" draggable="false"></label>
+            <br>
+
+
+          </div>
+          <audio src="mp3/roll.mp3" id="rollsound"></audio>
+            <audio src="mp3/intro.mp3" id="intro"></audio>
+          <button onclick="kasteKnapp()" id="kasteKnapp" class="knappBrett">Start runde 1</button> <br>
+          <p>NTNU Digital Forretningsutvikling 2019</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <audio src="mp3/introsound.mp3" id="intro"></audio>
+    <audio src="mp3/dicedrop.mp3" id="diceSound"></audio>
+    <script src="yatzy.js"></script>
+    <script src="menyer.js"></script>
+    <script src="hjemmeside.js"></script>
+    <br> <p id="kast"></p>
+  </body>
+</html>
